@@ -8,7 +8,8 @@ $router = new \Bramus\Router\Router();
 
 // Define routes
 $router->get('/', function() {
-    echo "Hola";
+    $db = new \FernandoDefez\Agenda\App\Database();
+    $db->connect();
 });
 
 // Run it!
