@@ -2,17 +2,21 @@
 <html lang="en">
 
 <head>
-   <!-- Required meta tags -->
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <!-- CSS only -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-   <!-- Icons -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <!-- Icon --->
+    <link rel="icon" href="/assets/images/icon.svg">
 
-   <title>Agenda 404</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <title> 404 </title>
 </head>
 
 <body class="">
@@ -20,7 +24,7 @@
       <nav class="navbar navbar-light">
          <div class="container-fluid px-0 d-flex justify-content-between">
             <a class="navbar-brand d-flex align-items-center fw-bold" href="">
-               <img src="/assets/images/contact.png" alt="" width="30" height="24" class="d-inline-block">
+                <img src="/assets/images/icon.svg" alt="" loading="lazy" width="40" height="40" class="d-inline-block">
                <!-- alig-text-top -->
                 &nbsp;
                 Agenda
