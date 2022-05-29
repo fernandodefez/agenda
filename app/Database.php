@@ -21,6 +21,7 @@ class Database {
 
     public function connect(): PDO
     {
+        echo $this->database;
         try{
             $conn = new PDO($this->database);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
