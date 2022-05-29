@@ -26,8 +26,7 @@ $router->mount('/api/v1', function() use ($router) {
 });
 
 $router->set404('/api(/.*)?', function() {
-    header('HTTP/1.1 404 Not Found');
-    header('Content-Type: application/json');
+    header('HTTP/1.1 404 Not Found');header('Content-Type: application/json');
 
     echo json_encode(
         [
