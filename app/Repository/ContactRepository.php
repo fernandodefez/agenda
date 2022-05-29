@@ -26,7 +26,7 @@ class ContactRepository {
      */
     public function create(Contact $contact) : bool
     {
-        $sql = "INSERT INTO contacts (name, lastname, email, phone, thumbnail)  
+        $sql = "INSERT INTO public.contacts (name, lastname, email, phone, thumbnail)  
                 VALUES (?,?,?,?,?)";
 
         $stmt = $this->db->connect()->prepare($sql);
