@@ -33,7 +33,6 @@ class ContactController {
 
     public function show()
     {
-        header('Content-Type: application/json');
         $contacts = (new ContactRepository())->findAll();
         echo json_encode($contacts);
     }
@@ -121,10 +120,11 @@ class ContactController {
 
             $contact = new Contact(-1, $name, $lastname, $thubmnail, $phone, $email);
 
-            $data['message'] = ($contactRepository->create($contact) && Image::make($_FILES['thumbnail'], $thubmnail))
-                ? "Contact was successfully created" : "Contact was not created";
+            $data['success'] =
+                ($contactRepository->create($contact) && Image::make($_FILES['thumbnail'], $thubmnail));
 
-            $data['success'] = true;
+            $data['message'] =
+                ($data['success'])? "Contact was successfully created" : "Contact was not created";
         }
 
         echo json_encode($data);
@@ -156,13 +156,10 @@ class ContactController {
             $contactRepository = new ContactRepository();
             $contact = $contactRepository->get($content['id']);
 
-            Image::destroy($contact['thumbnail']);
+            $data['success'] = ($contactRepository->delete($content['id']) && Image::destroy($contact['thumbnail']));
 
-            $contactRepository->delete($content['id']);
-
-            $data['success'] = true;
-            $data['message'] = "Success!";
-            $data['contact'] = $contact;
+            $data['message'] =
+                ($data['success'])? "Contact was successfully removed" : "Something went wrong when trying to remove contact";
         }
         echo json_encode($data);
     }

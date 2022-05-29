@@ -50,7 +50,7 @@ class ContactRepository {
      */
     public function get(int $id) : array
     {
-        $sql = "SELECT * FROM contacts WHERE id = :id";
+        $sql = "SELECT * FROM public.contacts WHERE id = :id";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['id' => $id]);
 
@@ -76,7 +76,7 @@ class ContactRepository {
      */
     public function findAll() : array
     {
-        $sql = "SELECT * FROM contacts";
+        $sql = "SELECT * FROM public.contacts";
         $stmt = $this->db->connect()->query($sql);
         $contacts = [];
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
@@ -110,7 +110,7 @@ class ContactRepository {
      */
     public function delete(int $id) : bool
     {
-        $sql = "DELETE FROM contacts WHERE id = :id";
+        $sql = "DELETE FROM public.contacts WHERE id = :id";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['id' => $id]);
         $row = $stmt->rowCount();

@@ -233,6 +233,7 @@
             }
         });
 
+
         /**
          * @author Fernando Defez
          * @function fetchContacts
@@ -243,12 +244,24 @@
             const contacts = await response.json();
 
             if (!response.ok) {
-                location.reload();
-                return;
+                Swal.fire({
+                    title: 'Error trying to fetch the contacts!',
+                    text: "Would you like to try again?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, fetch them!'
+                }).then(async (result) => {
+                    if (result.isConfirmed) {
+                        fetchContacts();
+                        return;
+                    }
+                    location.reload();
+                });
             }
 
             let html = "";
-
             // Set card's placeholders skeletons
             setPlaceholders(contacts.length);
 
@@ -290,7 +303,7 @@
                 }
                 document.getElementById("contacts-list").innerHTML = "";
                 document.getElementById('contacts-list').innerHTML = html;
-            }, 1000);
+            }, 500);
         }
 
         /**
@@ -309,19 +322,33 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then(async (result) => {
                 if (result.isConfirmed) {
-
                     let req = new XMLHttpRequest();
                     req.open("DELETE", BASE_URL + '/api/v1/contacts');
-
                     req.onreadystatechange = function () {
                         if (this.readyState === 4) {
-                            const data = JSON.parse(this.response);
+                            let data = JSON.parse(this.response);
+                            if (!data.success) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: data.message,
+                                });
+                                return;
+                            }
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Contact removed!',
+                                text: data.message,
+                            });
                         }
                     }
                     req.onerror = function () {
-
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong!',
+                        });
                     }
-
                     req.send("id="+id);
                 }
                 fetchContacts();

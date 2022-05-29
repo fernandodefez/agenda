@@ -42,7 +42,6 @@ class Database {
                     phone VARCHAR(10) NOT NULL,
                     thumbnail VARCHAR(250) NOT NULL
                 )")->execute();
-            var_dump($conn);
             return $conn;
         } catch(PDOException $exception) {
             throw new PDOException("Something went wrong when trying to connect to the database");
