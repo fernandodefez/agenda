@@ -4,7 +4,7 @@
  * @author Fernando Defez <fernandodefez@outlook.com>
 */
 
-namespace FernandoDefez\Agenda\App\Models;
+namespace FernandoDefez\Agenda\App\Model;
 
 class Contact {
 

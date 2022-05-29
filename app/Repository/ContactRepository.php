@@ -4,10 +4,10 @@
  * @author FernandoDefez <fernandodefez@outlook.com>
  */
 
-namespace FernandoDefez\Agenda\App\Repositories;
+namespace FernandoDefez\Agenda\App\Repository;
 
 use FernandoDefez\Agenda\App\Database;
-use FernandoDefez\Agenda\App\Models\Contact;
+use FernandoDefez\Agenda\App\Model\Contact;
 
 class ContactRepository {
 

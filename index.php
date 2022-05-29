@@ -12,5 +12,7 @@ $router->get('/', function() {
     $db->connect();
 });
 
+$router->get('', '\FernandoDefez\Agenda\App\Http\Controllers\ContactController@index');
+
 // Run it!
 $router->run();

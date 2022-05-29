@@ -4,11 +4,11 @@
  * @author Fernando Defez <fernandodefez@outlook.com>
  */
 
-namespace FernandoDefez\Agenda\App\Http\Controllers;
+namespace FernandoDefez\Agenda\App\Http\Controller;
 
 use FernandoDefez\Agenda\App\Image;
-use FernandoDefez\Agenda\App\Models\Contact;
-use FernandoDefez\Agenda\App\Repositories\ContactRepository;
+use FernandoDefez\Agenda\App\Model\Contact;
+use FernandoDefez\Agenda\App\Repository\ContactRepository;
 
 class ContactController {
 
