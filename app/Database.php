@@ -23,23 +23,22 @@ class Database {
     {
         echo $this->database;
 
-        /*try{
+        try{
             $conn = new PDO($this->database);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            /*$conn->prepare(
+            $conn->prepare(
                 "
-                CREATE TABLE IF NOT EXISTS contacts (
+                CREATE TABLE IF NOT EXISTS public.contacts (
                     id INTEGER PRIMARY KEY,
                     name VARCHAR(50) NOT NULL,
                     lastname VARCHAR(60) NOT NULL,
                     email VARCHAR(150) NOT NULL,
                     phone VARCHAR(10) NOT NULL,
                     thumbnail VARCHAR(250) NOT NULL
-                )
-                ")->execute();
+                )")->execute();
             return $conn;
         } catch(PDOException $exception) {
             throw new PDOException("Something went wrong when trying to connect to the database");
-        }*/
+        }
     }
 }
