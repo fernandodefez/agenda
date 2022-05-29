@@ -1,0 +1,17 @@
+{
+    "name": "fernandodefez/agenda",
+    "description": "This is a web application that allows you to store contacts",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Fernandodefez\\Agenda\\App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "fernandodefez",
+            "email": "fernandodefez@outlook.com"
+        }
+    ],
+    "require": {}
+}
