@@ -6,7 +6,6 @@
 
 namespace FernandoDefez\Agenda\App;
 
-
 use PDO;
 use PDOException;
 
@@ -16,7 +15,8 @@ class Database {
 
     public function __construct()
     {
-        $this->database = "postgres://vscxmzqqbltbch:b35477ad5c313605c67dd82fae0a5ddd3ba6a09472228900724b4704560003c3@ec2-34-227-120-79.compute-1.amazonaws.com:5432/ddt7640qr5skkm";
+        //$this->database = localhost;
+        $this->database = getenv("DATABASE_URL");
     }
 
     public function connect(): PDO
@@ -24,7 +24,7 @@ class Database {
         try{
             $conn = new PDO($this->database);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $conn->prepare(
+            /*$conn->prepare(
                 "
                 CREATE TABLE IF NOT EXISTS contacts (
                     id INTEGER PRIMARY KEY,
@@ -34,7 +34,7 @@ class Database {
                     phone VARCHAR(10) NOT NULL,
                     thumbnail VARCHAR(250) NOT NULL
                 )
-                ")->execute();
+                ")->execute();*/
             return $conn;
         } catch(PDOException $exception) {
             throw new PDOException("Something went wrong when trying to connect to the database");
