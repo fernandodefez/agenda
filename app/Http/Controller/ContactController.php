@@ -105,7 +105,7 @@ class ContactController {
 
         $contactRepository = new ContactRepository();
         $contacts = $contactRepository->findAll();
-        if ((count($contacts) >= self::MAX_CONTACTS)) {
+        if ((count($contacts) == self::MAX_CONTACTS)) {
             $errors['out_of_bounds'] = "You are only allowed to create up to " . self::MAX_CONTACTS . " contacts";
         }
 
