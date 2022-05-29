@@ -20,11 +20,11 @@ class Database {
     public function __construct()
     {
         //$this->database = localhost;
-        $this->host     =   "ec2-54-211-255-161.compute-1.amazonaws.com";
-        $this->port     =   "5432";
-        $this->database =   "d4an56ume8ued8";
-        $this->username =   "aaitmieqwsbtty";
-        $this->password =   "29acee8a559969637b2c272586058fdffc7b4244c13ec8f155fe46792135df03";
+        $this->host     =   "";
+        $this->port     =   "";
+        $this->database =   "";
+        $this->username =   "";
+        $this->password =   "";
     }
 
     public function connect() : PDO
