@@ -19,10 +19,11 @@ class Database {
         $this->database = getenv("DATABASE_URL");
     }
 
-    public function connect(): PDO
+    public function connect()
     {
         echo $this->database;
-        try{
+
+        /*try{
             $conn = new PDO($this->database);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             /*$conn->prepare(
@@ -35,10 +36,10 @@ class Database {
                     phone VARCHAR(10) NOT NULL,
                     thumbnail VARCHAR(250) NOT NULL
                 )
-                ")->execute();*/
+                ")->execute();
             return $conn;
         } catch(PDOException $exception) {
             throw new PDOException("Something went wrong when trying to connect to the database");
-        }
+        }*/
     }
 }
